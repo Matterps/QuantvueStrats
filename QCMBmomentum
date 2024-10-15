@@ -50,7 +50,7 @@ namespace NinjaTrader.NinjaScript.Strategies
 		{
 			if (State == State.SetDefaults)
 			{
-				Description									= @"Outta jokes.";
+				Description									= @"Outta Jokes.";
 				Name										= "QCMBmomentum";
 				Calculate									= Calculate.OnBarClose;
 				EntriesPerDirection							= 1;
@@ -97,13 +97,12 @@ namespace NinjaTrader.NinjaScript.Strategies
 			else if (State == State.DataLoaded)
 			{				
 				
+				QMomentum1 = QMomentum(22, QMomentumMAType.EMA, true, true, true, true, true, false, Brushes.Teal, Brushes.Red, Brushes.Red, Brushes.RoyalBlue, Brushes.Green, Brushes.LimeGreen, Brushes.Yellow, Brushes.Red);
 				Moneyball1 = Moneyball(Close, Brushes.RoyalBlue, Brushes.Blue, mb_Nb_bars, mb_period, mb_zero, mb_uThreshold, mb_lThreshold, mb_Sensitivity, MoneyballMode.M, false);
 				Qcloud1 = Qcloud(Close, Brushes.Red, Brushes.Green, 19, 29, 49, 59, 69, 99, false);
 				AddChartIndicator(Moneyball(Close, Brushes.RoyalBlue, Brushes.Blue, mb_Nb_bars, mb_period, true, mb_uThreshold, mb_lThreshold, mb_Sensitivity, MoneyballMode.M, false));
-				AddChartIndicator(Qcloud(Close, Brushes.Red, Brushes.Green, 19, 29, 49, 59, 69, 99, false));
+				AddChartIndicator(Qcloud(Close, Brushes.Red, Brushes.Green, 19, 29, 49, 59, 69, 99, false));			   
 				AddChartIndicator(QMomentum(22, QMomentumMAType.EMA, true, true, true, true, true, false, Brushes.Teal, Brushes.Red, Brushes.Red, Brushes.RoyalBlue, Brushes.Green, Brushes.LimeGreen, Brushes.Yellow, Brushes.Red));
-				
-				//AddChartIndicator(QMomentum(22, QMomentumMAType.EMA, true, true, true, true, true, false, Brushes.Teal, Brushes.Red, Brushes.Red, Brushes.RoyalBlue, Brushes.Green, Brushes.LimeGreen, Brushes.Yellow, Brushes.Red));
 				
 				
 			}
@@ -360,7 +359,7 @@ namespace NinjaTrader.NinjaScript.Strategies
         #endregion
 	}
 }
-namespace CustomEnumNamespaceQcloudMoneyball
+namespace CustomEnumNamespaceQCMBmomentum
 {
 	public enum TimeMode
 	{
